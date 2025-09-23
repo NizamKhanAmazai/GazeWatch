@@ -1,0 +1,39 @@
+/* .slideLeft{
+    animation-name: slidebyLeft;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;  
+    animation-duration: 1s;
+    top: 80%;
+}
+@keyframes slidebyLeft {
+    0%{
+        position: absolute; 
+        top: 0%;
+        right: 100%;
+    }
+    100%{
+        position: absolute; 
+        top: 0%;
+        right:  10%;
+    }
+}
+.slideright{
+    animation-name: slidebyRight;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;  
+    animation-delay: 1500ms;
+    animation-duration: 1s; 
+    
+}
+@keyframes slidebyRight {
+    0%{
+        position: absolute;
+        top: 80%;
+        left: 100%;
+    }
+    100%{
+        position: absolute; 
+        top: 80%;
+        left:  10%;
+    }
+} */

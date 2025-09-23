@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+.input{
+    @apply  ring-green-300 outline-1 ring-2 rounded-md text-white pl-2 text-[14px] md:text-[18px] w-[90%] h-[40px] placeholder-blue-100 md:w-[80%] 
+}
+
+.hideScroll::-webkit-scrollbar{
+    display: none;
+}

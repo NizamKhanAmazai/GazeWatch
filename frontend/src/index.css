@@ -1,0 +1,39 @@
+@import "tailwindcss"; 
+ 
+
+.large_image::after{
+    /* display: var(--displayimg);  */
+    opacity: var(--displayimg);
+    display: block;
+    content: "";
+    height: 100%;
+    width:  100%; 
+    object-fit: fill;
+    border-radius: 12px;
+    background-color: black; 
+    background-position: var(--zoom-x) var(--zoom-y); 
+    background-image: var(--imgurl);
+    background-repeat: no-repeat;
+    background-size: 200%;  
+    position: absolute;
+    top: 0px;
+    left: 0px; 
+    transition: opacity 0.2s; 
+    cursor: pointer;
+}  
+
+input::-webkit-inner-spin-button,
+ input::-webkit-outer-spin-button{
+    display: none;
+}
+/* 
+input:invalid {
+  border: 2px dashed red;
+}
+input[ type="email"]:invalid:required {
+  border: 2px dashed red;
+}
+input:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);  
+  border: 2px dashed rgb(160, 143, 45);
+} */
