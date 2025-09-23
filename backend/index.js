@@ -18,7 +18,7 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(cors(
     {
-        origin: ["https://gaze-watch-frontend.vercel.app/" , "https://gaze-watch.vercel.app/" ],
+        origin: ["https://gaze-watch-frontend.vercel.app" , "https://gaze-watch.vercel.app" ],
         credentials: true,
     }
 ))
