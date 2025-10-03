@@ -37,8 +37,7 @@ export const Admin_Login = async (req, res) => {
         } 
         res.status(200).json({admin, Orders: totalOrders.length, Products: totalProducts.length})
         
-    } catch (error) {
-        console.log(error);
+    } catch (error) { 
         res.status(500).json({message: "admin login error "})        
     }
 }
@@ -52,8 +51,7 @@ export const LogOut_Admin = async (req, res) => {
 
         res.clearCookie("GZA_T");
         res.status(200).json({message: "Logout successfull."})
-    } catch (error) {
-        console.log(error);
+    } catch (error) { 
         res.status(200).json({message: "error in Logout!"})        
     }
 }
@@ -74,9 +72,8 @@ export const isAuth = async (req, res) => {
             return res.status(400).json({message: "orders Or products Not Available"}) 
         } 
         res.status(200).json({admin, Orders: totalOrders.length, Products: totalProducts.length})
-    } catch (error) {
-        console.log(error)
-        res.status(200).json({message: "error in authentication"})
+    } catch (error) { 
+        res.status(500).json({message: "error in authentication"})
         
     }
 }
@@ -128,8 +125,7 @@ export const Add_New_Product = async (req, res) => {
             Type, date: Date.now(),
         });
         res.status(200).json(NewProduct);
-    } catch (error) {
-        console.log(error)
+    } catch (error) { 
         res.status(500).json({message: "error in creating Product", error});
     }
 }
@@ -182,9 +178,8 @@ export const Get_All_Products_For_Admin = async (req, res) => {
         }
 
         res.status(200).json(products)
-    } catch (error) {
-        console.log(error)
-        res.status(200).json({message: "error in get all products!"})
+    } catch (error) { 
+        res.status(500).json({message: "error in get all products!"})
     }
 }
  
