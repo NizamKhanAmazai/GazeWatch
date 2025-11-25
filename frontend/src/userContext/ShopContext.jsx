@@ -26,7 +26,7 @@ function ShopContext({ children }) {
 
   const fetchProducts = async () => {
     try {
-      let result = await axios.get(serverUrl + "/api/product/all", {
+      let result = await axios.get("/api/product/all", {
         withCredentials: true,
       });
       setProducts(result.data); 
@@ -65,7 +65,7 @@ function ShopContext({ children }) {
         setCartLoading(true) 
         // send product to cart OR save the product in user cart
         let result = await axios.put(
-          serverUrl + "/api/auth/cart/update",
+          "/api/auth/cart/update",
           { ProductId, userid },
           { withCredentials: true }
         ); 
@@ -91,7 +91,7 @@ function ShopContext({ children }) {
         if(ProductArray.length){ 
           let cartProduct = await axios.post(
             // getting cart products from db ProductArray Or fetching cart product for register user
-            serverUrl + "/api/product/cart/all",
+            "/api/product/cart/all",
             { ProductArray },
             { withCredentials: true }
           );
@@ -107,7 +107,7 @@ function ShopContext({ children }) {
       // setCartProducts for unregister user  OR fetch cart product for unregister user
       const copyCart = cartItems.length > 0 && cartItems.slice()
       let gettedCArtItems =copyCart.length > 0 && await axios.post(
-        serverUrl + "/api/user/not/register/cart",
+        "/api/user/not/register/cart",
         { copyCart },
         { withCredentials: true }
       ); 

@@ -37,7 +37,7 @@ function Register() {
     e.preventDefault();
     try {
       let result = await axios.post(
-        serverUrl + "/api/user/register",
+        "/api/user/register",
         details,
         {
           withCredentials: true,
@@ -63,7 +63,7 @@ function Register() {
       let name = user.displayName;
       let email = user.email;
       let result = await axios.post(
-        serverUrl + "/api/user/oauth/google",
+        "/api/user/oauth/google",
         {
           name: name,
           email: email,

@@ -29,7 +29,7 @@ function Login() {
     if (email && password) {
       try {
         let user = await axios.post(
-          serverUrl + "/api/user/login", 
+          "/api/user/login", 
           { email: email, password: password },
           { withCredentials: true }
         );
@@ -56,7 +56,7 @@ function Login() {
       let email = user.email;
       let name = user.displayName;
       
-      let result = await axios.post( serverUrl + "/api/user/oauth/google", { email: email, name: name }, { withCredentials: true });
+      let result = await axios.post( "/api/user/oauth/google", { email: email, name: name }, { withCredentials: true });
       setToastSuccess("LogIn Successfull")
       navigate("/");
       console.log(result);

@@ -71,7 +71,7 @@ function Nav() {
 
   const Logout = async () => {  
     try {
-      let result = await axios.get(serverUrl + "/api/auth/user/Logout", {withCredentials: true})
+      let result = await axios.get("/api/auth/user/Logout", {withCredentials: true})
       authorizeUser()
       // window.location.reload();
       setToastSuccess("logout Successfull")

@@ -27,7 +27,7 @@ function ListAll(props) {
         if (userData) {
           try {
             setLoading(true)// 
-            let data = await axios.delete(serverUrl + `/api/auth/cart/delete?product=${id}&userid=${userId}`, {userId}, {
+            let data = await axios.delete(`/api/auth/cart/delete?product=${id}&userid=${userId}`, {userId}, {
               WithCredential: true,
             }); 
             data && await authorizeUser();

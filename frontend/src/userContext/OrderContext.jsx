@@ -20,7 +20,7 @@ function OrderContext({children}) {
               setCurrentProductId(ProductId)
               ProductId && setOrderLoading(true)
               const Id = userId;
-              const result = await axios.get(serverUrl + `/api/order/user/pending/${Id}`, {withCredential: true})
+              const result = await axios.get(`/api/order/user/pending/${Id}`, {withCredential: true})
               if(result.data.message !== "Orders not found"){
                 setOrders(result.data)
               } 

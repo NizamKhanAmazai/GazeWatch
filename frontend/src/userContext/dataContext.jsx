@@ -17,7 +17,7 @@ function DataContext({children}) {
 
     const authorizeUser =async ()=>{
         try {
-            let result =await axios.get(serverUrl + "/api/auth/user/isauth", {withCredentials: true}) 
+            let result =await axios.get("/api/auth/user/isauth", {withCredentials: true}) 
             setUserData(result.data)  
         } catch (error) { 
             // console.log(error)

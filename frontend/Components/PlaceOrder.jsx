@@ -65,7 +65,7 @@ function PlaceOrder() {
           orderState
         })
         
-        const result =await axios.post(serverUrl + "/api/order/place/new", {
+        const result =await axios.post("/api/order/place/new", {
           firstName,
           lastName,
           email,
