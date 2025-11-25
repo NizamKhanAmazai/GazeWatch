@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import pic from "../src/assets/picture.png";
 import { IoTrashOutline } from "react-icons/io5";
 import { IoImageOutline } from "react-icons/io5";
-import { userDataContex } from "../src/userContext/dataContext";
-import { GazeWatchContext } from "../src/userContext/UserContext";
+import { userDataContex } from "../src/userContext/dataContext"; 
 import axios from "axios";
 import { shopDataContext } from "../src/userContext/ShopContext";
 import Loading from "./Loading";
@@ -12,8 +11,7 @@ import { toast } from "react-toastify";
 function ListAll(props) { 
   const [ItemImage, setItemImage] = useState(props.image1);
   const { userData, authorizeUser } = useContext(userDataContex);
-  const { setCartProducts, cartProducts, setCartItemsCount, cartItems, setCartItems, getSubTotal } = useContext(shopDataContext);
-  const { serverUrl } = useContext(GazeWatchContext);
+  const { setCartProducts, cartProducts, setCartItemsCount, setCartItems, getSubTotal } = useContext(shopDataContext);
   const [loading, setLoading] = useState(false)
 
   const handleImage = () => {

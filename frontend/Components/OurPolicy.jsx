@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "./Title";
 import { MdOutlineCurrencyExchange } from "react-icons/md";
 import { MdVerified } from "react-icons/md";

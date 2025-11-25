@@ -1,6 +1,6 @@
-import { useContext, useState } from 'react' 
+import { useContext } from 'react' 
 import './App.css' 
-import { Navigate, Route, Routes, useParams } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import Register from './Pages/Register'
 import Login from './Pages/Login' 
@@ -25,8 +25,7 @@ function App() {
     <>
     <Ai/>
       <Nav/>    
-      <ToastContainer />
-      {/*userData && */} 
+      <ToastContainer /> 
     <Routes>
       <Route path='/' element={ <Home/>} />
       <Route path='/register' element={<Register/>} />

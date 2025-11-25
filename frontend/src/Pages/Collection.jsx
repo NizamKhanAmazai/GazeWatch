@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CollectionSideBar from "../../Components/CollectionSideBar";
 import { shopDataContext } from "../userContext/ShopContext";
 import ItemCard from "../../Components/ItemCard";

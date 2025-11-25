@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IoImageOutline } from "react-icons/io5";
 import pic from "../src/assets/picture.png";
 

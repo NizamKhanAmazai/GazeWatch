@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Title from "../../Components/Title.jsx";
 import ItemCard from "../../Components/ItemCard.jsx";
 import { shopDataContext } from "../userContext/ShopContext.jsx";

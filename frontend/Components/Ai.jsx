@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import Aiimage from "../src/assets/Ai1.png"
 import Ai2 from "../src/assets/AI2.png"
 import { shopDataContext } from '../src/userContext/ShopContext'

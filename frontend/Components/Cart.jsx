@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ListAll from "./ListAll"; 
 import { shopDataContext } from "../src/userContext/ShopContext";
-import { userDataContex } from "../src/userContext/dataContext"; 
-import { GazeWatchContext } from "../src/userContext/UserContext"; 
+import { userDataContex } from "../src/userContext/dataContext";  
 import Title from "./Title"; 
 import { useNavigate } from "react-router-dom";
 
@@ -10,10 +9,8 @@ function Cart() {
   
   const [shippingFee, setShippingFee] = useState(0); 
   const { Currency, cartProducts, cartItemsCount, Delivery_fee } = useContext(shopDataContext);
-  const { userData, authorizeUser } = useContext(userDataContex);
-  const [subTotal, setSubTotal] = useState(0);
-  const [totalAmount, setTotalAmount] = useState(0)
-  const { serverUrl } = useContext(GazeWatchContext);
+  const { userData } = useContext(userDataContex);
+  const [subTotal, setSubTotal] = useState(0); 
   const navigate = useNavigate()
   
   const ListedProducts = () => { 

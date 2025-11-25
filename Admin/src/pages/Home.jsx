@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import Nav from "../../components/Nav";
 import SideBar from "../../components/SideBar"; 
 import { gsap } from "gsap";
@@ -8,11 +8,8 @@ import { adminDataContext } from "../../userContext/DataContext";
 
 function Home() { 
    
-  const {allPageData} = useContext(adminDataContext)
-
-  const handlePageData =async ()=>{
-     
-  }
+  const { allPageData } = useContext(adminDataContext)
+ 
 
   useEffect(()=>{
      allPageData

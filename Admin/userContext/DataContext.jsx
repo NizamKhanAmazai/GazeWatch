@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
-import { serverContext } from './UserContext';
+import { createContext, useEffect, useState } from 'react' 
 import axios from 'axios';
 
 
@@ -9,13 +8,10 @@ function DataContext({children}) {
 
     const [userData, setUserData] = useState(null)
     const [allPageData, setAllPageData] = useState(null)
-    
-
-    const {serverUrl} = useContext(serverContext);
-
+     
     const getCurrentAdmin = async ()=>{
         try {
-            let admin =await axios.get(serverUrl + "/api/auth/admin/isCurrent", {withCredentials:true})
+            let admin =await axios.get("/api/auth/admin/isCurrent", {withCredentials:true})
             setUserData(admin.data.admin); 
             setAllPageData(admin.data)
         } catch (error) {

@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import { useState } from "react";
 import pic from "../src/assets/picture.png";
 import { IoTrashOutline } from "react-icons/io5";
-import { IoImageOutline } from "react-icons/io5";
-import { serverContext } from "../userContext/UserContext";
+import { IoImageOutline } from "react-icons/io5"; 
 import axios from "axios";
 import Loading from "./Loading";
 import { toast } from "react-toastify";
@@ -16,13 +15,12 @@ function ListGlass(props) {
     
     const handleImage = () => {
         setItemImage(pic)
-     };
-  const { serverUrl } = useContext(serverContext);
+     }; 
 
   const Remove = async ( id ) => { 
       try {
         setLoading(true); 
-        let result = await axios.get(serverUrl + `/api/product/remove/${id}`, {
+        let result = await axios.get(`/api/product/remove/${id}`, {
           withCredentials: true,
         });
         

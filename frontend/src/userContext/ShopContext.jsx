@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { GazeWatchContext } from "./UserContext";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { userDataContex } from "./dataContext";
 import { useLocation } from "react-router-dom"; 
@@ -12,16 +11,14 @@ function ShopContext({ children }) {
   // for cart page
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [cartItems, setCartItems] = useState([]); 
-  const [cartProducts, setCartProducts] = useState(null)
-  const [cartOpen, setCartOpen] =useState(false)
+  const [cartProducts, setCartProducts] = useState(null) 
   const [cartLoading, setCartLoading] = useState(false)
   const [showSearch, setShowsearch] = useState(Boolean);
   const [userPanel, setUserPanel] = useState(Boolean);
 
 
   const location = useLocation();
-
-  const { serverUrl } = useContext(GazeWatchContext);
+ 
   const { userData, authorizeUser } = useContext(userDataContex);
 
   const fetchProducts = async () => {
@@ -84,7 +81,6 @@ function ShopContext({ children }) {
   // ----------------------------------------------------calling cart data function
   
   const DBCartItems = async (userData, cartItems) => {
-    // if(!cartItems && (location.pathname === "/cart" || location.pathname === "/cart/placeorder")){
       if (userData) {
       try { 
         let ProductArray = userData.cartData; 
@@ -94,17 +90,14 @@ function ShopContext({ children }) {
             "/api/product/cart/all",
             { ProductArray },
             { withCredentials: true }
-          );
-          //check it if cartproduct is not availble
-          // setProducts(cartProduct.data.UserProducts); 
+          ); 
           setCartProducts(cartProduct.data.UserProducts ? cartProduct.data.UserProducts : [])
           setCartItemsCount(!cartProduct.data.UserProducts.length ? 0 : cartProduct.data.UserProducts.length); 
          }
       } catch (error) { 
         setCartProducts(null); 
       }
-    } else {
-      // setCartProducts for unregister user  OR fetch cart product for unregister user
+    } else { 
       const copyCart = cartItems.length > 0 && cartItems.slice()
       let gettedCArtItems =copyCart.length > 0 && await axios.post(
         "/api/user/not/register/cart",
@@ -114,8 +107,7 @@ function ShopContext({ children }) {
       setCartProducts(gettedCArtItems ? gettedCArtItems.data : null);   
       setCartItemsCount(!gettedCArtItems.data ? 0 : gettedCArtItems.data.length  ); 
   
-    }
-  // }
+    } 
   };
  
 
@@ -125,22 +117,11 @@ function ShopContext({ children }) {
       setCartItemsCount(userData ? userData.cartData ? userData.cartData.length  : 0 : 0) 
 
   }, [userData, location.pathname === "/cart"]);
-
-  // useEffect(() => {  
-  //   DBCartItems(userData,cartItems);  
-  // }, [location.pathname]);
-  
-  // useEffect(()=>{
-  //   settingCartProductCount(userData);
-    
-  // },[cartItems])
-
+ 
 
 
   let oneByOne = async (productid, userData) => {
-    // if (cartItems.length > 0) {
-      //  await GetProduct(productid);
-    // }
+ 
     if (userData) {
       await CartSendDb(userData && userData._id, productid);
     }

@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useContext, useState } from 'react' 
-import { GazeWatchContext } from './UserContext';   
+import { createContext, useEffect, useContext, useState } from 'react' 
 export const orderDataContext = createContext(); 
 import { userDataContex } from "./dataContext";
 import axios from 'axios';
@@ -7,8 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function OrderContext({children}) {  
-    
-    const {serverUrl} = useContext(GazeWatchContext)
+     
     const {userData} = useContext(userDataContex)
     const [orders, setOrders] = useState()
     const [orderLoading, setOrderLoading] = useState(false)

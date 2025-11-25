@@ -1,4 +1,4 @@
-import { use, useContext, useState } from 'react' 
+import { useContext } from 'react' 
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
@@ -11,8 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import NotFound from '../components/NotFound'; 
 import FinishedOrders from './pages/FinishedOrders';
 
-function App() {
-  const [count, setCount] = useState(0) 
+function App() { 
   const {userData} = useContext(adminDataContext)
   return (
     <> 

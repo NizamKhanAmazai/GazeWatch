@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
-import { RiFileUploadFill } from "react-icons/ri";
-import { serverContext } from "../userContext/UserContext";
+import { RiFileUploadFill } from "react-icons/ri"; 
 import axios from "axios";
 import { toast } from "react-toastify";
 import Loading from "./Loading"; 
@@ -26,8 +25,7 @@ function AddGlass({productType}) {
   const [ProductFrameMaterial, setProductFrameMaterial] = useState("");
   const [ProductLense, setProductLense] = useState("");
   const [loading, setLoading] = useState(false)
-
-  const {serverUrl} = useContext(serverContext)
+ 
 
   const handleClearState = ()=>{
     setImage1(null)
@@ -91,7 +89,7 @@ function AddGlass({productType}) {
       formdata.append("Lense", ProductLense) 
       formdata.append("Type", productType)
         
-        let result =await  axios.post(serverUrl + "/api/auth/admin/product/add", formdata, {withCredentials: true,
+        let result =await  axios.post("/api/auth/admin/product/add", formdata, {withCredentials: true,
           headers:{
             "Content-Type": "multipart/json"
           }

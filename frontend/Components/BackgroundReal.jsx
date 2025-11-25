@@ -1,4 +1,3 @@
-import React from "react";
 import glassSlide1 from "../src/assets/newGlassSlide1.png";
 import WatchSlide3 from "../src/assets/newWatchSlide1.png";
 import glassSlide2 from "../src/assets/newGlassSlide2.png";

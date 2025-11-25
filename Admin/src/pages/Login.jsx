@@ -25,7 +25,7 @@ function Login() {
     e.preventDefault();
     try {
       setLoading(true)
-      let admin =await axios.post(serverUrl + "/api/auth/admin/login", {email: email, password: password}, {withCredentials:true})
+      let admin =await axios.post("/api/auth/admin/login", {email: email, password: password}, {withCredentials:true})
       setUserData(admin.data.admin); 
       setAllPageData(admin.data)
       navigate("/")

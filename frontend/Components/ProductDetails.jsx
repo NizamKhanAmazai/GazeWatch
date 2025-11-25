@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { shopDataContext } from "../src/userContext/ShopContext";
 import { FaStar } from "react-icons/fa6";

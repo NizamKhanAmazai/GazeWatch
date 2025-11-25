@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import logo from "../src/assets/logo2.png";
 import { IoSearchCircleOutline } from "react-icons/io5";
 import { FaCircleUser } from "react-icons/fa6";
@@ -15,8 +15,7 @@ import { HiCollection } from "react-icons/hi";
 import { BiCollection } from "react-icons/bi";
 import { MdOutlineContacts } from "react-icons/md";
 import { IoMdCart } from "react-icons/io";
-import axios from "axios";
-import { GazeWatchContext } from "../src/userContext/UserContext";
+import axios from "axios"; 
 import { toast } from "react-toastify";
 
 
@@ -24,9 +23,8 @@ function Nav() {
   const UserPnl = useRef(Element);
   const searchbar = useRef(Element);
 
-  const { Search, setSearch, cartItemsCount, setCartItemsCount , showSearch, setShowsearch, userPanel, setUserPanel } = useContext(shopDataContext);
-  const {serverUrl} = useContext(GazeWatchContext);
-  const { userData, authorizeUser, setToastSuccess, setToastError } = useContext(userDataContex);
+  const { Search, setSearch, cartItemsCount, showSearch, setShowsearch, userPanel, setUserPanel } = useContext(shopDataContext);
+  const { userData, authorizeUser, setToastSuccess } = useContext(userDataContex);
   // const userData = false;
 
   const Navigate = useNavigate();

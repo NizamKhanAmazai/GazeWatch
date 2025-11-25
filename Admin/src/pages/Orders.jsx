@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import Nav from "../../components/Nav";  
-import { serverContext } from "../../userContext/UserContext"; 
+import { useContext, useEffect, useState } from "react";
+import Nav from "../../components/Nav";   
 import { ProductDataContext } from "../../userContext/ProductContext"; 
 import AllOrders from "../../components/AllOrders"; 
 import SideBar from "../../components/SideBar"; 
@@ -10,8 +9,7 @@ function Orders() {
  
   const [totalProducts, setTotalProducts] = useState([]);
   const navigate = useNavigate();
-  // const [orders, setOrders] = useState([]); 
-  const {serverUrl} = useContext(serverContext);
+  // const [orders, setOrders] = useState([]);  
   const {orders } = useContext(ProductDataContext);
   // const [totalOrdersProductCount, setTotlaOrdersProductCount] = useState([]);
 

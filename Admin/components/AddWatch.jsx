@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
-import { RiFileUploadFill } from "react-icons/ri";
-import {serverContext} from "../userContext/UserContext"; 
+import { RiFileUploadFill } from "react-icons/ri"; 
 import axios from "axios";
 import { toast } from "react-toastify";
 import Loading from "./Loading";
@@ -21,8 +20,7 @@ function AddWatch({productType}) {
   const [IsAffordable, setIsAffordable] = useState(true);
   const [IsLuxury, setIsLuxury] = useState(false);
   const [loading, setLoading] = useState(false)
-
-  const {serverUrl} = useContext(serverContext) 
+ 
 
   const handleClearStates = ()=>{
     setImage1(null);
@@ -82,7 +80,7 @@ function AddWatch({productType}) {
        formdata.append("Luxury", IsLuxury)
        formdata.append("Type", productType)
 
-       let result =await axios.post(serverUrl + "/api/auth/admin/product/add", formdata, {withCredentials:true} );
+       let result =await axios.post("/api/auth/admin/product/add", formdata, {withCredentials:true} );
        console.log(result.data);
        setLoading(false)
        handleClearStates();

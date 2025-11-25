@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProductDataContext } from "../userContext/ProductContext";
-import axios from "axios";
-import { serverContext } from "../userContext/UserContext";
+import axios from "axios"; 
 import { toast } from "react-toastify";
 import Loading from "./Loading";
 
 function OrderPopUp(props) {
   let {showDetails, setShowDetails,update, setUpdate } = props 
-  let { fetch_Finished_Orders,fetchOrders } = useContext(ProductDataContext)
-  let { serverUrl } = useContext(serverContext)
+  let { fetch_Finished_Orders,fetchOrders } = useContext(ProductDataContext) 
 
   // set shipping date and order status 
   const [orderStatus, setOrderStatus] = useState(props.shippingDate)
@@ -21,7 +19,7 @@ function OrderPopUp(props) {
     if(update){
     try {
       setLoading(true)
-      let results = await axios.post(serverUrl + "/api/order/admin/update", { id, orderState: shipping, date: orderStatus }, {withCredentials: true});
+      let results = await axios.post("/api/order/admin/update", { id, orderState: shipping, date: orderStatus }, {withCredentials: true});
       setUpdate(prev=> !prev) 
       toast.success("Updated Successfully")
       setLoading(false)

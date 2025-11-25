@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Nav from "../../components/Nav";
 import SideBar from "../../components/SideBar";
 import ListWatch from "../../components/ListWatch";
@@ -8,7 +8,7 @@ import { ProductDataContext } from "../../userContext/ProductContext.jsx";
 
 function List() {
   // const [productType, setProductType] = useState("all"); ------------2
-  const {products, setProducts, productType, setProductType, listLoading} = useContext(ProductDataContext); 
+  const {products, productType, setProductType} = useContext(ProductDataContext); 
   // const [products, setProducts] = useState([]); ------------1
   // all product is work when products change to substages then the all products removed this will remain store all products
   const [allProducts, setAllProducts] = useState([]);  

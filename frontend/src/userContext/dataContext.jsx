@@ -1,18 +1,12 @@
-import axios from 'axios';
-import React, { createContext, useContext, useEffect, useState } from 'react'
-import { GazeWatchContext } from './UserContext';
-import { shopDataContext } from './ShopContext';
+import { createContext, useEffect, useState } from 'react'
+import axios from 'axios'; 
 import { toast } from 'react-toastify';
 
 export const userDataContex= createContext();
 function DataContext({children}) {
-      const [toastSuccess, setToastSuccess] = useState(false)
-      const [toastError, setToastError] = useState(false)
-
-    
-
-    let {serverUrl} = useContext(GazeWatchContext) 
-    // const {DBCartItems, cartItems} = useContext(shopDataContext)
+    const [toastSuccess, setToastSuccess] = useState(false)
+    const [toastError, setToastError] = useState(false)
+ 
     let [userData, setUserData] = useState(null)
 
     const authorizeUser =async ()=>{

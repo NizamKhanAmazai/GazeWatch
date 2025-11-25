@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../assets/logo2.png";
 import { IoIosEyeOff } from "react-icons/io";
 import { IoIosEye } from "react-icons/io";
 import google from "../assets/google.png";
-import { useLocation, useNavigate } from "react-router-dom";
-import { GazeWatchContext } from "../userContext/UserContext";
+import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import { signInWithPopup } from "firebase/auth";
 import { Auth, provider } from "../../Utils/firebaseAuth";
@@ -21,13 +20,10 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [count, setCount]= useState(0)
-
-  const { serverUrl } = useContext(GazeWatchContext);
+ 
   const {setUserData, setToastSuccess, setToastError} = useContext(userDataContex)
-  
-  const location = useLocation();
-  // handle submit
-  
+   
+  // handle submit 
   const details = {
     name,
     email,

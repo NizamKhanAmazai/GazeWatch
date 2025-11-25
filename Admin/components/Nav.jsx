@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import logo from "../src/assets/logo2.png"; 
-import { useContext } from "react";
-import { serverContext } from "../userContext/UserContext";
+import { useContext } from "react"; 
 import axios from "axios"
 import { adminDataContext } from "../userContext/DataContext";
 import { toast } from "react-toastify";
@@ -9,8 +8,7 @@ import Loading from "./Loading";
 import {useNavigate} from "react-router-dom"
 
 
-function Nav() {
-  let {serverUrl} = useContext(serverContext)
+function Nav() { 
   const { setUserData } = useContext(adminDataContext)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
@@ -18,7 +16,7 @@ function Nav() {
   const handleLogout = async ()=>{
     try {
       setLoading(true)
-      let result = await axios.get(serverUrl + "/api/auth/admin/logout" , {withCredentials: true})
+      let result = await axios.get("/api/auth/admin/logout" , {withCredentials: true})
       setUserData(null);
 
       toast.success('Logout Successfull')

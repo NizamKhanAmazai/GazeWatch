@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from "../src/assets/logo2.png"
 
 function Footer() {

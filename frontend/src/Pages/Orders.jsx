@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react' 
+import { useContext, useEffect, useState } from 'react' 
 import { orderDataContext } from '../userContext/OrderContext';
 import TotalOrders from '../../Components/TotalOrders';
 
 function Orders() { 
     const { orders } = useContext(orderDataContext)
     const [totalProducts, setTotalProducts] = useState([]);
-    const [totalOrdersProductCount, setTotlaOrdersProductCount] = useState([]);
-    const [orderState, setOrderState] = useState([])
+    const [totalOrdersProductCount, setTotlaOrdersProductCount] = useState([]); 
     const [totalAmount, setTotalAmount] = useState([]) 
     const [address, setAddress] = useState("");
     const [paymentMethod, setPaymentMethod] = useState("");

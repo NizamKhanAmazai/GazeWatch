@@ -1,18 +1,16 @@
 import {useState, useEffect, useContext, useRef} from 'react'; 
 import { shopDataContext } from "../src/userContext/ShopContext";
 import { userDataContex } from "../src/userContext/dataContext";
-import axios from "axios";
-import { GazeWatchContext } from "../src/userContext/UserContext"; 
+import axios from "axios"; 
 import Title from "./Title"; 
 import { useNavigate } from 'react-router-dom';
 import Loading from './Loading';
 
 function PlaceOrder() { 
     const [shippingFee, setShippingFee] = useState(0); 
-    const { Currency, setCartProducts, cartProducts, cartItemsCount, Delivery_fee, DBCartItems, setCartItems, setCartItemsCount } = useContext(shopDataContext);
-    const { userData, authorizeUser, setToastSuccess, setToastError } = useContext(userDataContex);
-    const [subTotal, setSubTotal] = useState(0);
-    const { serverUrl } = useContext(GazeWatchContext);
+    const { Currency, setCartProducts, cartProducts, cartItemsCount, Delivery_fee, setCartItems, setCartItemsCount } = useContext(shopDataContext);
+    const { userData, setToastError } = useContext(userDataContex);
+    const [subTotal, setSubTotal] = useState(0); 
     const submitbtn = useRef(null);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false)

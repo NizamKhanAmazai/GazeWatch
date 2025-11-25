@@ -1,4 +1,3 @@
-import React from "react";
 import contact from "../assets/Contact.jpg";
 import { FaFacebook, FaYoutube } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";

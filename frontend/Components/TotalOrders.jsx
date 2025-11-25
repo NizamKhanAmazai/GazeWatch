@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import pic from "../src/assets/picture.png"; 
 import { IoImageOutline } from "react-icons/io5";
 import { userDataContex } from "../src/userContext/dataContext";   
@@ -11,19 +11,15 @@ function TotalOrders(props) {
 
   const [ItemImage, setItemImage] = useState(props.image1);
   const [orderStatus, setOrderStatus] = useState();
-  const { userData, authorizeUser } = useContext(userDataContex);
-  // const { setCartProducts, cartProducts, setCartItemsCount, cartItems, setCartItems, getSubTotal } = useContext(shopDataContext);
-  // const { serverUrl } = useContext(GazeWatchContext);
+  const { userData } = useContext(userDataContex); 
   const { getOrders, orders, orderLoading, currentProductId  } = useContext(orderDataContext);
-
-  // const [orderState, setOrderState] = useState(""); 
+ 
   const [quantityOfProduct, setQuantityOfProduct] = useState(""); 
   const [orderDate, setOrderDate] = useState() 
 
   const handleImage = () => {
     setItemImage(pic);
-  };
-  let userId = userData && userData._id 
+  }; 
   let { name, price, id, category, paymentMethod } = props;  
      
 

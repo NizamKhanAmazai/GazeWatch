@@ -2,9 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import OrderPopUp from "./OrderPopUp";
 import { ProductDataContext } from "../userContext/ProductContext"; 
 import ShowProductsInAllOrder from "./ShowProductsInAllOrder"; 
-import NewOrder from "../src/assets/newOrder.jpg"
-// import { userDataContex } from "../src/userContext/dataContext";
-// import { orderDataContext } from "../src/userContext/OrderContext";
+import NewOrder from "../src/assets/newOrder.jpg" 
 
 function AllOrders(props) { 
   const [quantityOfProduct, setQuantityOfProduct] = useState("");

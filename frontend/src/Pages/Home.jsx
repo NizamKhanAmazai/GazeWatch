@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import BackgroundReal from "../../Components/BackgroundReal";
 import Hero from "../../Components/Hero";
 import LatestCollection from "./LatestCollection";

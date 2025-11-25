@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { IoAddCircleOutline } from "react-icons/io5";
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { IoBagCheckOutline } from "react-icons/io5"; 

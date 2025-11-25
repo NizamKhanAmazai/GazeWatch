@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import Nav from "../../components/Nav";  
-import { serverContext } from "../../userContext/UserContext"; 
+import { useContext, useEffect, useState } from "react";
+import Nav from "../../components/Nav";   
 import { ProductDataContext } from "../../userContext/ProductContext";  
 import SideBar from "../../components/SideBar"; 
 import { useNavigate } from "react-router-dom";
@@ -9,9 +8,8 @@ import AllFinishedOrders from "../../components/AllFinishedOrders";
 function FinishedOrders() {
  
   const [totalProducts, setTotalProducts] = useState([]);
-  const navigate = useNavigate(); 
-  const {serverUrl} = useContext(serverContext);
-  const {orders, finished_Orders, setFinished_Orders } = useContext(ProductDataContext); 
+  const navigate = useNavigate();  
+  const {finished_Orders } = useContext(ProductDataContext); 
 
   const settingProducts = (finished_Orders)=>{
     let x =finished_Orders.allOrders 

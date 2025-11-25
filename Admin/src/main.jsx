@@ -5,8 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import UserContext from "../userContext/UserContext.jsx";
 import DataContext from "../userContext/DataContext.jsx";
-import ProductContext from "../userContext/ProductContext.jsx";
-import { LoadingBarContainer } from "react-top-loading-bar";
+import ProductContext from "../userContext/ProductContext.jsx"; 
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

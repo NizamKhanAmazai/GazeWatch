@@ -1,7 +1,6 @@
 import axios from 'axios';
-import React, { Children, createContext, useContext, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
-import { serverContext } from './UserContext';
+import { createContext, useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'; 
 
 export const ProductDataContext = createContext();
 
@@ -10,8 +9,7 @@ function ProductContext({children}) {
     const [productType, setProductType] = useState("all")
     const location = useLocation();
     const [orders, setOrders] = useState([]); 
-    const [finished_Orders, setFinished_Orders] = useState([]); 
-    const {serverUrl, setProgress} = useContext(serverContext)  
+    const [finished_Orders, setFinished_Orders] = useState([]);  
     const [listLoading, setListLoading] = useState(false)
     const [orderLoading, setOrderLoading] = useState(false)
     
@@ -20,11 +18,11 @@ function ProductContext({children}) {
  
 
 // fetch product for List 
-const fetchProducts = async (productType) => { 
+const fetchProducts = async () => { 
     try {
       setListLoading(true) 
       let result = await axios.get(
-        serverUrl + `/api/auth/admin/products`, 
+        `/api/auth/admin/products`, 
         { withCredentials: true }
       );  
       setProducts(result.data); 
@@ -48,7 +46,7 @@ const fetchProducts = async (productType) => {
 const fetchOrders = async () => {
     try { 
       setOrderLoading(true)  
-      let result = await axios.get(serverUrl + "/api/order/admin/pending", {withCredentials: true})
+      let result = await axios.get("/api/order/admin/pending", {withCredentials: true})
       setOrders(result.data) 
       // console.log(result)
       setOrderLoading(false)
@@ -63,7 +61,7 @@ const fetchOrders = async () => {
 const fetch_Finished_Orders = async () => {
     try { 
       setOrderLoading(true) 
-      let result = await axios.get(serverUrl + "/api/order/admin/completed", {withCredentials: true})
+      let result = await axios.get("/api/order/admin/completed", {withCredentials: true})
       setFinished_Orders(result.data) 
       // console.log(result)
       setOrderLoading(false)

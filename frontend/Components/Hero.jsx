@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Hero({slideCount, setSlideCount, text}) {
   return (
     <div>

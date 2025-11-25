@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import google from "../assets/google.png";
 import logo from "../assets/logo2.png";
 import { IoIosEyeOff } from "react-icons/io";
 import { IoIosEye } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
-import { GazeWatchContext } from "../userContext/UserContext";
+import { useNavigate } from "react-router-dom"; 
 import { signInWithPopup } from "firebase/auth";
 import { Auth, provider } from "../../Utils/firebaseAuth";
 import axios from "axios";
@@ -19,8 +18,7 @@ function Login() {
 
   const [show, setShow] = useState(false);
 
-  const navigate = useNavigate();
-  const { serverUrl } = useContext(GazeWatchContext);
+  const navigate = useNavigate(); 
   const { authorizeUser,  setToastSuccess, setToastError } = useContext(userDataContex);
 
   // handle login
